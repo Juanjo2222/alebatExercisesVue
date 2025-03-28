@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import TheTile from '@/components/TheTile.vue'
-const title = 'Título estático'
+import TheTitle from '@/components/TheTitle.vue'
 </script>
 
 <template>
@@ -16,7 +15,7 @@ const title = 'Título estático'
         <RouterLink to="/about">About</RouterLink>
       </nav>
 
-      <TheTile :title="title"></TheTile>
+      <TheTitle #title>Título estático</TheTitle>
     </div>
   </header>
 
