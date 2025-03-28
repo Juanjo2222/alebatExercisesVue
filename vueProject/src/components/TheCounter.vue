@@ -8,11 +8,7 @@ const counter = ref(0)
   <section>
     <TheTitle #title>Título estático</TheTitle>
     <p>Contador = {{ counter }}</p>
-    <div v-if="counter <= 10">
-      <button class="increment" @click="counter++">Incrementar</button>
-    </div>
-    <div v-if="counter !== 0">
-      <button class="decrement" @click="counter--">Decrementar</button>
-    </div>
+    <button class="increment" @click="counter++" v-if="counter <= 10">Incrementar</button>
+    <button class="decrement" @click="counter--" v-if="counter !== 0">Decrementar</button>
   </section>
 </template>
