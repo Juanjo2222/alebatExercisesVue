@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import TheTile from '@/components/TheTile.vue'
 </script>
 
 <template>
@@ -13,6 +14,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+
+      <TheTile></TheTile>
     </div>
   </header>
 
