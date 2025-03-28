@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import TheCounter from '@/components/TheCounter.vue'
+import ProductCard from '@/components/ProductCard.vue'
 </script>
 
 <template>
