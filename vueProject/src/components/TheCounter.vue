@@ -5,12 +5,14 @@ const counter = ref(0)
 </script>
 
 <template>
-  <div>
+  <section>
     <TheTitle #title>Título estático</TheTitle>
     <p>Contador = {{ counter }}</p>
-    <button class="increment" @click="counter++">Incrementar</button>
-    <button class="decrement" @click="counter--">Decrementar</button>
-  </div>
+    <div v-if="counter <= 10">
+      <button class="increment" @click="counter++">Incrementar</button>
+    </div>
+    <div v-if="counter !== 0">
+      <button class="decrement" @click="counter--">Decrementar</button>
+    </div>
+  </section>
 </template>
-
-<style></style>
