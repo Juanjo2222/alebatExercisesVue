@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import TheCounter from '@/components/TheCounter.vue'
-
+import ParentComponent from '@/components/ParentComponent.vue'
 </script>
 
 <template>
@@ -15,11 +15,15 @@ import TheCounter from '@/components/TheCounter.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+      
+      <TheCounter></TheCounter>
+
       <RouterLink to="/catalogue">
         <button class="catalogue-button">Ver Catálogo</button>
       </RouterLink>
 
-      <TheCounter></TheCounter>
+      <ParentComponent></ParentComponent>
+
     </div>
   </header>
 
