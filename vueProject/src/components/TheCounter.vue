@@ -9,7 +9,7 @@ const doubleCounter = computed(() => counter.value * 2)
 <template>
   <section>
     <TheTitle>
-      <template #title>Título estático</template>
+      <template #title>Título estático </template>
     </TheTitle>
     <p :class="counter === 10 ? 'active' : 'inactive'">Contador = {{ counter }}</p>
     <p>Valor doble del contador{{ doubleCounter }}</p>
