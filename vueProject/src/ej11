@@ -1,0 +1,39 @@
+1 ¿Qué es un linter?
+
+es una herramienta que analiza el código en busca de errores, malas prácticas o inconsistencias de estilo
+
+2 ¿Qué es Husky?
+
+Es para automatizar procesos
+
+3 ¿Qué es la reactividad?
+
+Es para que una variable cambie e valro a tiempo real
+
+4 ¿Desde dónde hay que crear todas las ramas para los desarrollos?
+
+Desde main
+
+5 ¿Cuándo se puede utilizar la rama main?
+
+nunca se usa la rama main
+
+6 ¿Qué son las custom properties?
+
+variables que creamos para css
+
+7 Diferencias entre v-if y v-show
+
+v-if elimina o agrega el elemento en el DOM, suele ser mejor para cambios raros y v-show solo cambia display: none, manteniendo el elemento en el DOM, es mejor para cambios frecuentes.
+
+8 ¿Cuáles son los valores de falsy?
+
+0, -0, undefined, NaN, null, ""
+
+9 ¿ Qué es Nullish Coalescing Operator?
+
+es el ?? para asiganar por asi decirlo un valor por defecto si es false
+
+10 ¿Para que se utiliza TypeScript?
+
+para asegurarnos que los daots llegan con el tipado correcto
