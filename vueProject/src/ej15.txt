@@ -1,0 +1,73 @@
+//1º CÓDIGO
+import { ref } from 'vue'
+
+export function useCounter() {
+  const count = ref(0)
+
+  function increment() {
+    count.value++
+  }
+
+  //la función increment se podría hacer así:
+
+  const incrementCorrect = () => count.value++
+}
+
+//2º CÓDIGO
+<script setup> 
+import { ref } from "vue";
+
+const items = ref(["Apple", "Banana", "Cherry"]); //los items no tienen id
+</script>
+<template>
+  <ul>
+    <li v-for="(item, index) in items" :key="index"> //que la key sea mejor el item.id
+      {{ item }} //poner item.name
+    </li>
+  </ul>
+</template>
+
+//3ºCÓDIGO
+
+<template>
+  <ul>
+    <TheComponent v-for="item in items" :key="item.id" :dataUser="item" /> //faltan los li donde pondría el v-for
+  </ul>
+</template>
+
+//4ºCÓDIGO
+
+<script setup lang="ts">
+import TheTitle from "@/components/TheTitle.vue";
+import TheButton from "@/components/TheButton.vue";
+import { useCounterStore } from "@/stores/counter";
+
+const { count, message, incrementCounter, decrementCounter, doubleCounter } =
+  useCounterStore(); 
+  
+  // pierden la reactividad, por lo que es mejor
+
+  const counterStore = useCounterStore();
+  const { count, message, doubleCounter } = storeToRefs(counterStore);
+  const { incrementCounter, decrementCounter } = counterStore;
+
+</script>
+<template>
+  <TheTitle :class="count === 10 ? 'active' : 'inactive'"
+    >Contador: {{ count }} - {{ message }}</TheTitle
+  >
+  <TheTitle>Contador doble: {{ doubleCounter }}</TheTitle>
+
+  <TheButton
+    v-if="count < 10"
+    aria-label="Incrementar contador"
+    @click="incrementCounter"
+    >Increase</TheButton
+  >
+  <TheButton
+    v-if="count > 0"
+    aria-label="Decrementar contador"
+    @click="decrementCounter"
+    >Decrease</TheButton
+  >
+</template>
