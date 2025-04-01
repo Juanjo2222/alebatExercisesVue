@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import TheTitle from './TheTitle.vue'
-import { increment, decrement, counter } from '@/composables/TheCounter.vue'
-import { computed } from 'vue'
+import { useCounterStore } from '@/stores/counter'
+import { storeToRefs } from 'pinia'
 import { ref, watch } from 'vue'
 
-const doubleCounter = computed(() => counter.value * 2)
 const counterStatusTxt = ref('')
+
+const counterStore = useCounterStore()
+const { counter, doubleCounter } = storeToRefs(counterStore)
+const { increment, decrement } = counterStore
 
 watch(counter, (newValue) => {
   if (newValue === 0) {
