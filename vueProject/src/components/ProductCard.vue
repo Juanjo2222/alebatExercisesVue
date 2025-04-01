@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
+import type { Product } from '../../data/mock'
 
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-})
+defineProps<{
+  product: Product
+}>()
 </script>
 
 <template>
