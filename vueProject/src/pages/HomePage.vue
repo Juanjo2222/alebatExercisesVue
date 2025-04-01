@@ -2,6 +2,13 @@
 import { RouterLink, RouterView } from 'vue-router'
 import TheCounter from '@/components/TheCounter.vue'
 import ParentComponent from '@/components/ParentComponent.vue'
+import LinkedinComponent from '@/components/icons/LinkedinComponent.vue'
+import InstagramComponent from '@/components/icons/InstagramComponent.vue'
+
+const socialComponents = {
+  instagram: InstagramComponent,
+  linkedin: LinkedinComponent,
+}
 </script>
 
 <template>
@@ -15,7 +22,7 @@ import ParentComponent from '@/components/ParentComponent.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
-      
+
       <TheCounter></TheCounter>
 
       <RouterLink to="/catalogue">
@@ -23,9 +30,17 @@ import ParentComponent from '@/components/ParentComponent.vue'
       </RouterLink>
 
       <ParentComponent></ParentComponent>
-
     </div>
   </header>
+
+  <div class="social-menu">
+    <component
+      v-for="(component, name) in socialComponents"
+      :key="name"
+      :is="component"
+      class="social-icon"
+    />
+  </div>
 
   <RouterView />
 </template>
@@ -93,12 +108,10 @@ nav a:first-of-type {
   }
 }
 
-.catalogue-button{
-
-    margin-top:1rem;
-    background-color: rgb(228, 228, 179);
-    border-radius: 1.5rem;
-    padding:0.5rem;
-
+.catalogue-button {
+  margin-top: 1rem;
+  background-color: rgb(228, 228, 179);
+  border-radius: 1.5rem;
+  padding: 0.5rem;
 }
 </style>
