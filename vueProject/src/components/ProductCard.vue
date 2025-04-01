@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import { products } from '../../data/mock'
+import { defineProps } from 'vue'
+
+defineProps({
+  product: {
+    type: Object,
+    required: true,
+  },
+})
 </script>
 
 <template>
   <div class="product-container">
-    <section v-for="product in products" :key="product.id" class="product-card">
+    <section class="product-card">
       <img :src="product.image" class="product-image" />
       <h2 class="product-title">{{ product.title }}</h2>
       <span class="product-description">{{ product.description }}</span>

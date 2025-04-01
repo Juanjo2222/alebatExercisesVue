@@ -2,13 +2,16 @@
 import ProductCard from '@/components/ProductCard.vue'
 import { useCounterStore } from '@/stores/counter'
 import { storeToRefs } from 'pinia'
+import { products } from '../../data/mock'
 
 const counterStore = useCounterStore()
 const { counter } = storeToRefs(counterStore)
 </script>
 
 <template>
-  <ProductCard></ProductCard>
+  <div v-for="product in products" :key="product.id">
+    <ProductCard :product="product" />
+  </div>
   <RouterLink to="/home">
     <button class="home-button">Ver Home</button>
   </RouterLink>
